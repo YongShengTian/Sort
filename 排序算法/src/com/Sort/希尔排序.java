@@ -1,6 +1,7 @@
 package com.Sort;
 
 public class 希尔排序 {
+	///不稳定的算法，最差O(n^2),平均O(nlogN)
 	public static void main(String[] args) {
 		int[] a = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1 };
 		xiersort(a);
