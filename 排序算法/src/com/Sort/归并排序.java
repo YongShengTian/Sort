@@ -26,24 +26,25 @@ public class 归并排序 {
 	private static void merge(int[] a, int begin,int middle,int end) {
 		// TODO 自动生成的方法存根
 		int[] temparr=new int[a.length];
-		int mid=middle+1;
-		int temp=begin;
-		int index=begin;
-		while (begin<=middle&&mid<=end) {
-			  if (a[begin]<=a[mid]) {
-				temparr[index++]=a[begin++];
+		for (int i = 0; i < temparr.length; i++) {
+			 temparr[i]=a[i];
+		}
+		int helpleft=begin;
+		int helpright=middle+1;
+		int currentindex=begin;
+		while (helpleft<=middle&&helpright<=end) {
+			 if (temparr[helpleft]<=temparr[helpright]) {
+				a[currentindex]=temparr[helpleft];
+				helpleft++;
 			} else {
-				temparr[index++]=a[mid++];
+				a[currentindex]=temparr[helpright];
+				helpright++;
 			}
+			 currentindex++;
 		}
-		while (begin<=middle) {
-			temparr[index++]=a[begin++];
-		}
-		while (mid<=end) {
-			temparr[index++]=a[mid++];
-		}
-		while (temp<=end) {
-			 a[temp]=temparr[temp++];
+		int remain=middle-helpleft;
+		for (int i = 0; i <=remain; i++) {
+			 a[currentindex+i]=temparr[helpleft+i];
 		}
 	}
       
